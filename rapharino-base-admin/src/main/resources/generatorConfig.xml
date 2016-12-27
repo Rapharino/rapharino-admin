@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+
+<generatorConfiguration>
+    <!--   如果你希望不生成和Example查询有关的内容，那么可以按照如下进行配置: targetRuntime="MyBatis3Simple-->
+    <context id="context1"  defaultModelType="flat" targetRuntime="MyBatis3Simple">
+
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!--自定义中文注释 -->
+       <commentGenerator type="org.rapharino.mybatis.CommentGenerator">
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://173.48.124.128:3306/admin"
+                        userId="root"
+                        password="1203"/>
+        <!-- model -->
+        <javaModelGenerator targetPackage="org.rapharino.web.base.admin.model" targetProject="src/main/java">
+            <!-- 对数据库查询结果 进行 trim处理 -->
+            <property name="trimStrings" value="true" />
+            <property name="enableSubPackages" value="true" />
+        </javaModelGenerator>
+
+        <!-- map.xml -->
+        <sqlMapGenerator targetPackage="sqlmap" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--  mapper 接口-->
+        <javaClientGenerator targetPackage="org.rapharino.web.base.admin.dao" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true" />
+            <!-- <property name="rootInterface " value="com.gexin.oms.core.infrastructure.BaseMapper" /> -->
+        </javaClientGenerator>
+
+        <table tableName="tb_user" domainObjectName="User">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+        <table tableName="tb_icon" domainObjectName="Icon">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+        <table tableName="tb_organization" domainObjectName="Organization">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+        <table tableName="tb_resource" domainObjectName="Resource">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+        <table tableName="tb_role" domainObjectName="Role">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

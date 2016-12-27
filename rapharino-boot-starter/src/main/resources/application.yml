@@ -1,0 +1,5 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8802
+  address: 173.48.135.219

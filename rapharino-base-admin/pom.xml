@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>rapharino-boot</artifactId>
+        <groupId>org.rapharino</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>rapharino-base-admin</artifactId>
+    <dependencies>
+        <!--基础 base -->
+        <dependency>
+            <groupId>org.rapharino</groupId>
+            <artifactId>rapharino-base</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- shiro start-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-all</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-quartz</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+        <!-- shiro end-->
+    </dependencies>
+
+</project>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>rapharino-boot</artifactId>
+        <groupId>org.rapharino</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>rapharino-boot-starter</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>rapharino-boot-starter</name>
+    <description>Boot project for Rapharino</description>
+
+    <dependencies>
+
+        <!--基础 base -->
+        <dependency>
+            <groupId>org.rapharino</groupId>
+            <artifactId>rapharino-base</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.rapharino</groupId>
+            <artifactId>rapharino-base-admin</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>georg</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.rapharino</groupId>
+                    <artifactId>rapharino-web-georg-site</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                </dependency>
+            </dependencies>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!--<jar.name>${project.artifactId}-${project.version}-georg</jar.name>-->
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev</id>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
